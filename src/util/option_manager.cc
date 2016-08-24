@@ -254,6 +254,7 @@ void VocabTreeMatchOptions::Reset() {
   VocabTreeFeatureMatcher::Options options;
   num_images = options.num_images;
   vocab_tree_path = options.vocab_tree_path;
+  match_list_path = options.match_list_path;
 }
 
 bool VocabTreeMatchOptions::Check() {
@@ -268,6 +269,7 @@ VocabTreeFeatureMatcher::Options VocabTreeMatchOptions::Options() const {
   VocabTreeFeatureMatcher::Options options;
   options.num_images = num_images;
   options.vocab_tree_path = vocab_tree_path;
+  options.match_list_path = match_list_path;
   return options;
 }
 
@@ -831,6 +833,8 @@ void OptionManager::AddVocabTreeMatchOptions() {
                      num_images);
   ADD_OPTION_DEFAULT(VocabTreeMatchOptions, vocab_tree_match_options,
                      vocab_tree_path);
+  ADD_OPTION_DEFAULT(VocabTreeMatchOptions, vocab_tree_match_options,
+                     match_list_path);
 }
 
 void OptionManager::AddSpatialMatchOptions() {

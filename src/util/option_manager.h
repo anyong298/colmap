@@ -111,6 +111,7 @@ struct VocabTreeMatchOptions : public BaseOptions {
 
   int num_images;
   std::string vocab_tree_path;
+  std::string match_list_path;
 };
 
 struct SpatialMatchOptions : public BaseOptions {
